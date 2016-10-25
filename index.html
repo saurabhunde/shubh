@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HomePage</title>
+		<meta charset="UTF-8">
+		
+		<!--StyleSheets for Boootstrap-->
+		<link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
+		<link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap-theme.min.css">		
+		<link rel="stylesheet" href="css\default.css">
+		<!--script for bootstrap-->
+		<script src = "js\jquery.js"></script>
+		<script src="node_modules\bootstrap\dist\js\bootstrap.min.js" ></script>
+		<!--scripts defined in js folder-->
+		<script src="js\angular.min.js" ></script>
+		<!--<script src="js\route.js" ></script>-->
+		<!--<script src="js\routing.js" ></script>-->
+		<script src="js\default.js" ></script>
+		
+		
+		
+	</head>
+	<body ng-app="myApp">
+		<div class="container-fluid">
+			<Header>
+				<div class="row mid">
+					<div class="col-lg-12 bg-primary">
+						<h1>Library Project!!</h1>
+					</div>
+				</div>
+			</header>
+			<div ng-controller="mainCtrl">
+				<div class="row mid">	
+					<table class="table">
+						<tr class="col-lg-8">
+							<th>ISBN</th>
+							<th>BOOK-TITLE</th>
+							<th>AUTHOR-NAME</th>
+						</tr>
+						<tr class="col-lg-8" ng-repeat="x in books">
+							<td ng-click="clickIsbn($event)" id={{indexOf(x)}}><a href="">{{x.isbn}}</a></td>
+							<td ng-click="clickBook()">{{x.bookTitle}}</td>
+							<td ng-click="clickBook($event)" id={{indexOf(x)}}><a href="#">{{x.authorName}}</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="row">
+					<div class="col-lg-8 mid">
+						<button ng-click="" class="btn btn-success"><a href="addBook.html">AddNewBook</a></button>
+						<button ng-click="" class="btn btn-danger"><a href="addAuthor.html">AddNewAuthor</a></button>
+					</div>
+				</div>
+			</div>
+		</div><!--Container Ends here-->
+	</body>
+</html>
